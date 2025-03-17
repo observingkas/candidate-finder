@@ -1,44 +1,23 @@
-import React, { useState } from 'react';
-import CandidateSearch from "./pages/CandidateSearch"; 
-import { searchGithubUser } from './api/API';  
+import React from 'react';
+import { Outlet, Link } from 'react-router-dom';
 
 const App = () => {
-  const [username, setUsername] = useState('');  
-  const [candidate, setCandidate] = useState<any>(null);  
-
-  const fetchCandidate = async () => {
-    if (!username) {
-      console.error('Please provide a username'); 
-      return;
-    }
-    const data = await searchGithubUser(username);  
-    if (data) {
-      setCandidate(data);  // Set the candidate data if it's found
-    }
-  };
-
   return (
-    <div>
-      <h1>Search GitHub User</h1>
-
-      <input 
-        type="text" 
-        value={username} 
-        onChange={(e) => setUsername(e.target.value)}  
-        placeholder="Enter GitHub username" 
-      />
-
-      <button onClick={fetchCandidate}>Search User</button>
-
-      {candidate && (
-        <div>
-          <h2>Candidate Info</h2>
-          <p>Name: {candidate.name}</p>
-          <p>Username: {candidate.login}</p>
-          <p>Location: {candidate.location}</p>
-          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">View Profile</a>
-        </div>
-      )}
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <h1>GitHub Candidate Finder</h1>
+      
+      <nav style={{ marginBottom: '20px' }}>
+        <ul style={{ display: 'flex', gap: '20px', listStyle: 'none', padding: 0 }}>
+          <li>
+            <Link to="/">Search Candidates</Link>
+          </li>
+          <li>
+            <Link to="/savedcandidates">Saved Candidates</Link>
+          </li>
+        </ul>
+      </nav>
+      
+      <Outlet />
     </div>
   );
 };
