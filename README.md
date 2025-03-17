@@ -1,33 +1,42 @@
-# React + TypeScript + Vite
+# GitHub Candidate Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GitHub Candidate Finder is a web application designed to help employers find and save potential candidates from GitHub. The application fetches user data from the GitHub API, displays it in a user-friendly interface, and allows employers to save promising candidates for later review.
 
-Currently, two official plugins are available:
+# Table of Contents
+Installation
+Usage
+License
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+# Installation
+Clone the repository: git clone https://github.com/your-username/github-candidate-finder.git
+cd github-candidate-finder
+Install dependencies: npm install
+Create a .env file in the root directory with your GitHub token:
 
-## Expanding the ESLint configuration
+VITE_GITHUB_TOKEN=your_github_personal_access_token
+Start the development server: npm run dev
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Usage
+Home Page: View random GitHub users one at a time
 
-* Configure the top-level `parserOptions` property as follows:
+Click "+" to save a candidate and load the next one
+Click "-" to skip a candidate and load the next one
+Saved Candidates: View all saved candidates
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+See detailed information about each candidate
+Click "View Profile" to visit their GitHub page
+Click "Remove" to remove a candidate from your saved list
+API Integration: The application uses the GitHub API to fetch user data. A personal access token is required to increase the API rate limit. The token is stored in an environment variable and used for all API requests.
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+# Deployment
+The application is deployed on Render and can be accessed at https://your-app-name.onrender.com
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+# Contributing
+If you'd like to contribute to this project, please fork the repository, create a new branch, and submit a pull request with your changes.
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+##link to video walkthrough:
+
+##link to deployed page on render: https://github-candidate-finder-6x1f.onrender.com
