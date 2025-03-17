@@ -38,5 +38,6 @@ If you'd like to contribute to this project, please fork the repository, create 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ##link to video walkthrough:
+https://app.screencastify.com/v3/watch/1gOL9yZjfQ3S8k74RhVf
 
 ##link to deployed page on render: https://github-candidate-finder-6x1f.onrender.com
